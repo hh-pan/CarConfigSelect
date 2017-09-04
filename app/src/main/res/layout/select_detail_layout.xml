@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/rl_popupShopCart"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:zhy="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="355dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/goods_imag"
+            android:layout_width="82dp"
+            android:layout_height="82dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/colorPrimary"/>
+
+        <TextView
+            android:id="@+id/goods_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="50dp"
+            android:layout_toRightOf="@+id/goods_imag"
+            android:text="价格 ¥ 99"
+            android:textColor="@color/red"
+            android:textSize="18sp"/>
+
+        <TextView
+            android:id="@+id/tvChooseText_popShopCart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goods_price"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/goods_imag"
+            android:text="请选择规格"
+            android:textColor="@color/black"
+            android:textSize="16sp"/>
+
+        <ScrollView
+            android:id="@+id/select"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/goods_imag">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/config"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="22dp"
+                    android:text="规格"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <com.zhy.view.flowlayout.TagFlowLayout
+                    android:id="@+id/flow_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/config"/>
+
+                <TextView
+                    android:id="@+id/number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/flow_layout"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="22dp"
+                    android:text="数量"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"/>
+
+                <example.test.com.configselect.CountView
+                    android:id="@+id/count_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/number"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="15dp"/>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+        <include layout="@layout/goods_detail_bootom"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
